@@ -10,14 +10,14 @@
  - The web application is easy to add these improvements
  
  # Usage
- $ git clone git@github.com:chrysmur/Bike_Rentals_App.git
- cd Bike_Rentals
- source env_bike/bin/activate
- python3 server.py
+ - git clone git@github.com:chrysmur/Bike_Rentals_App.git
+ - cd Bike_Rentals
+ - source env_bike/bin/activate
+ - python3 server.py
  
- cd bikerentals
- npm install
- npm run start
+ - cd bikerentals
+ - npm install
+ - npm run start
  
  
  
