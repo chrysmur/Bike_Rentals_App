@@ -1,0 +1,21 @@
+.table1 {
+    background-color:gray;
+    left:0;
+    width:100;
+    height:100%;
+    border:1px solid;
+    font-size:20px;
+    position: fixed;
+    }
+.results{
+    color: aqua;
+    text-align: center;
+    font-size: 35px;
+}
+.selections {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 28px;
+    color: black;
+    font:bold
+    
+}

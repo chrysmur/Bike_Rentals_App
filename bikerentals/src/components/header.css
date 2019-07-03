@@ -1,0 +1,15 @@
+.header {
+    padding: 20px;
+    text-align: center;
+    background: #444ede;
+    color:burlywood;
+    font-size: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-variant: small-caps;
+    
+  }
+  logo{
+    width: 10%; 
+    height: 10%; 
+    object-fit: contain;
+  }
