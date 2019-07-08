@@ -32,7 +32,7 @@ class App extends React.Component {
         }else if(temps.includes(name)){
             data={...data,TEMP:(parseFloat(name.slice(0,2))+8)/47}
         } else if (name === 'holiday') {
-            const HOLIDAY=data['HOLIDAY']===0?1:0
+            const HOLIDAY=data['HOLIDAY']===0? 1 : 0
             console.log(HOLIDAY)
             data = { ...data, HOLIDAY: HOLIDAY}
         }else if(hours.includes(name)){
@@ -45,8 +45,8 @@ class App extends React.Component {
                 this.setState({pred})})
     }
 
-    async componentDidMount() {
-        await axios.post('http://127.0.0.1:5000', {data })
+    componentDidMount() {
+        axios.post('http://127.0.0.1:5000', {data })
             .then((resp) => {
                 const pred =  resp.data.res
                 this.setState({pred})})

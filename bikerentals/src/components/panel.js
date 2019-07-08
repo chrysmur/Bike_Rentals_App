@@ -19,13 +19,14 @@ const Panel = (props) => {
     const hours = values['HOUR']
     const holiday = values['HOLIDAY']? "Holiday":"Not Holiday"
     const season = values['SEASON_1']? 'spring':values['SEASON_2']? 'summer':values['SEASON_3']?'fall':'winter'
+    
     return (
-    <div className = "container" >
+    <div >
         <table className='table1' style={style}>
             <thead>
             </thead>
             <tbody>
-                <tr className="results" align ='center'>
+                <tr className="results">
                     <td colSpan='4' color='blue'>
                         Predicted Bikes: {result} 
                     </td>
@@ -37,14 +38,14 @@ const Panel = (props) => {
                     <td>Temp: {Math.ceil(temp)}C</td>
                     <td>Day: {holiday}</td>
                 </tr>
-                <tr colSpan='4'align ='center'>
+                <tr colSpan='4'>
                     <td className='title'>Seasons</td>
                     <td><Button name = "fall" clickHandler = { clickHandler }/> </td>
                     <td><Button name = "summer" clickHandler = { clickHandler }/> </td>
                     <td><Button name = "spring" clickHandler = { clickHandler }/></td>
                     <td><Button name = "winter" clickHandler = { clickHandler } /> </td>
                 </tr>
-                <tr className='hours' colSpan='4'align ='center'>     
+                <tr className='hours' colSpan='4'>     
                     <td className='title'>Hours</td>                         
                     <td><Button name = '8am'  clickHandler = { clickHandler }/></td>
                     <td> <Button name = '10am' clickHandler = { clickHandler }/></td>
@@ -52,7 +53,7 @@ const Panel = (props) => {
                     <td><Button name = '16pm' clickHandler = { clickHandler }/></td>
                 </tr>
             
-                <tr colSpan='4'align ='center' >
+                <tr colSpan='4' >
                     <td className='title'>Temperature</td>
                     <td><Button name = '0c' clickHandler = { clickHandler }/></td>
                     <td><Button name = '10c' clickHandler = { clickHandler }/></td>
@@ -60,11 +61,11 @@ const Panel = (props) => {
                     <td><Button name = '40c' clickHandler = { clickHandler }/></td>
                    
                 </tr>  
-                <tr colSpan='4'align ='center'>
+                <tr colSpan='4'>
                     <td className='title'>Days</td>
                     <td><Button name = 'holiday' clickHandler = { clickHandler } /></td>
                 </tr>
-                <tr colSpan='4'align ='center'>
+                <tr colSpan='4'>
                     <td><Button name ='reset' clickHandler = {clickHandler}/></td>
                 </tr>
                 
