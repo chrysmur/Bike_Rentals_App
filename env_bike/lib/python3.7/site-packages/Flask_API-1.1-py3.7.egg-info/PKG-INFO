@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: Flask-API
+Version: 1.1
+Summary: Browsable web APIs for Flask.
+Home-page: http://www.flaskapi.org
+Author: Tom Christie
+Author-email: tom@tomchristie.com
+License: BSD
+Description: Browsable web APIs for Flask.
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Flask
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Internet :: WWW/HTTP
