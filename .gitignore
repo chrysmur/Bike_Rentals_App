@@ -1,3 +1,6 @@
-.ipynb_checkpoints
-env_bike
-.vscode
+#dont track files on these folders
+env_bike/
+.vscode/
+
+#ignore these extensions
+*.ipynb_checkpoints
