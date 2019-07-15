@@ -1,6 +1,7 @@
 #dont track files on these folders
 env_bike/
 .vscode/
+venv/
 
 #ignore these extensions
 .ipynb_checkpoints
