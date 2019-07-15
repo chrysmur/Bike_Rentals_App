@@ -26,7 +26,7 @@ INTERCEPT      = -119.062
 # the mean of the temp
 #Spring=1,summer=2,fall=3,winter=4
 defData = {'SEASON_1':0,'SEASON_2':0,'SEASON_3':1 ,'SEASON_4':0,'TEMP':0.497,'HOLIDAY':0,'HOUR':11} 
-data = defData.copy() ## we can modify this and maintain sanity of th default data
+data = defData.copy() ## we can modify this and maintain sanity of the default data
 # if you only modify one element of the data, it maintains the rest of the defaults so it does not throw and error
 #temperatire normalization
 #(t-t_min)/(t_max-t_min), t_min=-8, t_max=+39
@@ -50,6 +50,7 @@ def predict(data):
 @app.route('/', methods=['POST','GET'])
 def requestHandler():
     if request.method=='POST':
+        print("request",request.json)
         newData = request.json['data']
         res =predict(newData)
         return res
