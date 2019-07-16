@@ -19,20 +19,25 @@ class App extends React.Component {
       HOUR: 11
     };
 
-    //events 'enum'
-    this.events = {
+    //seasons 'enum'
+    this.seasons = {
       SUMMER: "summer",
       WINTER: "winter",
       SPRING: "spring",
-      FALL: "fall",
+      FALL: "fall"
+    };
+
+    //events 'enum'
+    this.events = {
       RESET: "reset",
       HOLIDAY: "holiday"
     };
 
+    this.data = this.initData; //initialize our current data with our initialData
+
     //Our app's state
     this.state = {
-      pred: "", //predicted data
-      currentData: this.initData //initialize our current data with our initialData
+      pred: "" //predicted data
     };
 
     //temperatures array
@@ -46,73 +51,71 @@ class App extends React.Component {
     switch (true) {
       //Incase we received a reset command
       case name === this.events.RESET:
-        this.setState({ currentData: this.initData });
+        this.data = this.initData;
         break;
       //Incase we received a spring command
-      case name === this.events.SPRING:
-        let springData = {
-          ...this.initData,
+      case name === this.seasons.SPRING:
+        this.data = {
+          ...this.data,
           SEASON_1: 1,
           SEASON_2: 0,
           SEASON_3: 0,
           SEASON_4: 0
         };
-        this.setState({ currentData: springData });
         break;
       //Incase we received a summer command
-      case name === this.events.SUMMER:
-        const summerData = {
-          ...this.initData,
+      case name === this.seasons.SUMMER:
+        this.data = {
+          ...this.data,
           SEASON_1: 0,
           SEASON_2: 1,
           SEASON_3: 0,
           SEASON_4: 0
         };
-        this.setState({ currentData: summerData });
+
         break;
       //Incase we received a fall command
-      case name === this.events.FALL:
-        const fallData = {
-          ...this.initData,
+      case name === this.seasons.FALL:
+        this.data = {
+          ...this.data,
           SEASON_1: 0,
           SEASON_2: 0,
           SEASON_3: 1,
           SEASON_4: 0
         };
-        this.setState({ currentData: fallData });
         break;
       //Incase we received a winter command
-      case name === this.events.WINTER:
-        const winterData = {
-          ...this.initData,
+      case name === this.seasons.WINTER:
+        this.data = {
+          ...this.data,
           SEASON_1: 0,
           SEASON_2: 0,
           SEASON_3: 0,
           SEASON_4: 1
         };
-        this.setState({ currentData: winterData });
+
         break;
       //Incase we received a holiday command
       case name === this.events.HOLIDAY:
-        const HOLIDAY = this.initData["HOLIDAY"] === 0 ? 1 : 0;
-        this.setState({ currentData: { ...this.initData, HOLIDAY } });
+        const HOLIDAY = this.data["HOLIDAY"] === 0 ? 1 : 0;
+        this.data = { ...this.data, HOLIDAY };
         break;
       //Incase the received command is a temperature measure
       case this.temps.includes(name):
         const TEMP = (parseFloat(name.slice(0, 2)) + 8) / 47;
-        this.setState({ currentData: { ...this.initData, TEMP } });
+        this.data = { ...this.data, TEMP };
         break;
       //Incase the received  command is an hourly measure
       case this.hours.includes(name):
         const HOUR = parseFloat(name.slice(0, -2));
-        this.setState({ currentData: { ...this.initData, HOUR } });
+        this.data = { ...this.data, HOUR };
         break;
       default:
         break;
     }
 
     axios
-      .post("http://127.0.0.1:5000", { data: this.state.currentData })
+      .post("http://127.0.0.1:5000", { data: this.data })
       .then(resp => {
         const pred = resp.data.res;
         this.setState({ pred });
@@ -122,7 +125,7 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .post("http://127.0.0.1:5000", { data: this.state.currentData })
+      .post("http://127.0.0.1:5000", { data: this.data })
       .then(resp => {
         const pred = resp.data.res;
         this.setState({ pred });
@@ -137,7 +140,10 @@ class App extends React.Component {
         <Panel
           clickHandler={this.clickHandler}
           result={this.state.pred}
-          values={this.state.currentData}
+          values={this.data}
+          hours={this.hours}
+          temps={this.temps}
+          seasons={this.seasons}
         />
       </div>
     );
