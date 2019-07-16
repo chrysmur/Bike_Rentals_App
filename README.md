@@ -40,7 +40,7 @@ cd Bike_Rentals
  npm start
 ```
 
-Technology:
+### Technology Used
 
 - Flask
 - Jupyter Notebook
