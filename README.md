@@ -1,7 +1,7 @@
 ## Moving Machine Learning to the Web
 ### a Simple Linear Regression model for predicting the Popular Bike Rentals
 - The back end runs Flask.
-- The projected is modeled using Python in the notebook. We simplify the model the web application by including 4 features
+- The project is modeled using Python in the notebook. We simplify the model the web application by including 4 features
   - Season
   - Temperature
   - Day
